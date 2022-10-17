@@ -1,0 +1,69 @@
+
+Classes:
+
+Disk:
+	Attributes:
+		Name (string)
+		Block size: 1kb
+		Size (const): 1mb
+		Map (): blocks (file system)
+
+	Functions:
+		constructor
+
+File System:
+	Attributes:
+		Name (string)
+		Size (int): default to 16kb
+		Disk (Disk)
+		Map (): blocks (file used, space occupied (out of 1kb))
+
+	Functions:
+		contructor:
+			parameter: disk, (optional) size, (optional) name
+			returns: void
+		delete_fs():
+			parameter: empty
+			returns: void
+		tree():
+			parameter: empty
+			returns: tree of all the folders and files inside the current directory
+		list():
+			parameter: empty
+			returns: all the folders in the current directory
+
+Folder:
+	Attributes:
+		Name
+		File Path (location)
+		Content (files and folders)
+File:
+	Attributes:
+		Name
+		Size
+		File path (location)
+		Content (text, etc)
+
+	Functions:
+		constructor
+		delete_file()
+			parameter: empty
+			returns: void
+		edit_content()
+		find_path()
+			parameter: empty
+			returns: (string)
+		print_file(file)
+			parameter: file
+			returns: contents of file
+		move(Folder):
+			parameter: location
+			returns: void
+		copy()
+			parameter: empty
+			returns: void
+		rename(string)
+			parameter: new name
+			returns: void
+
+
