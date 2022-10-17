@@ -3,20 +3,23 @@ Classes:
 
 Disk:
 	Attributes:
-		Name (string)
-		Block size: 1kb
-		Size (const): 1mb
-		Map (): blocks (file system)
+		(string) Name 
+		(const int) Block size: #1kb
+		(const int) Size: #1mb
+		() Map: blocks (file system)
 
 	Functions:
 		constructor
+		delete()
+			parameters: empty
+			returns: void
 
 File System:
 	Attributes:
-		Name (string)
-		Size (int): default to 16kb
-		Disk (Disk)
-		Map (): blocks (file used, space occupied (out of 1kb))
+		(string) Name 
+		(int) Siz): #default to 16kb
+		(Disk) Disk 
+		() Map: blocks #file used, space occupied out of the 1kb
 
 	Functions:
 		contructor:
@@ -25,45 +28,56 @@ File System:
 		delete_fs():
 			parameter: empty
 			returns: void
-		tree():
-			parameter: empty
-			returns: tree of all the folders and files inside the current directory
-		list():
-			parameter: empty
-			returns: all the folders in the current directory
 
 Folder:
 	Attributes:
-		Name
-		File Path (location)
-		Content (files and folders)
+		(string) Name
+		(string) Folder Path
+		(Tree TBD) Content
+	Functions:
+		constructor():
+			parameter: (optional) name,  path of folder
+		delete_folder():
+			parameter: empty
+			returns: void
+		move():
+			parameter: new folder
+			returns: void
+		list():
+			parameter: empty
+			returns: all the immediate child files and folders 
+		tree():
+			parameter: empty
+			returns all the files and folders stored within this folder
+		
 File:
 	Attributes:
-		Name
-		Size
-		File path (location)
-		Content (text, etc)
+		(string) Name
+		(int) Size
+		(string) File path
+		(string) Content
 
 	Functions:
 		constructor
-		delete_file()
+		delete_file():
 			parameter: empty
 			returns: void
-		edit_content()
-		find_path()
+		open_file():
+			parameters: empty
+			returns: 
+		find_path():
 			parameter: empty
 			returns: (string)
-		print_file(file)
-			parameter: file
+		print_file():
+			parameter: (File) file
 			returns: contents of file
-		move(Folder):
-			parameter: location
+		move():
+			parameter: (string) location
 			returns: void
-		copy()
+		copy():
 			parameter: empty
 			returns: void
-		rename(string)
-			parameter: new name
+		rename():
+			parameter: (string) new name
 			returns: void
-
 
