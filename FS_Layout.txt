@@ -9,21 +9,25 @@ Disk:
 		() Map: blocks (file system)
 
 	Functions:
-		constructor
+		constructor():
+			parameters: (optional) name
 		delete()
 			parameters: empty
 			returns: void
+		print()
+			parameters: empty
+			returns: map
 
 File System:
 	Attributes:
 		(string) Name 
-		(int) Siz): #default to 16kb
+		(int) Size Capacity: #default to 16kb
 		(Disk) Disk 
 		() Map: blocks #file used, space occupied out of the 1kb
 
 	Functions:
 		contructor:
-			parameter: disk, (optional) size, (optional) name
+			parameter: disk, (optional) capacity, (optional) name
 			returns: void
 		delete_fs():
 			parameter: empty
@@ -36,7 +40,7 @@ Folder:
 		(Tree TBD) Content
 	Functions:
 		constructor():
-			parameter: (optional) name,  path of folder
+			parameter: (optional) name, path of folder
 		delete_folder():
 			parameter: empty
 			returns: void
@@ -58,7 +62,8 @@ File:
 		(string) Content
 
 	Functions:
-		constructor
+		constructor:
+			parameters: (optional) name, file path
 		delete_file():
 			parameter: empty
 			returns: void
@@ -70,7 +75,8 @@ File:
 			returns: (string)
 		print_file():
 			parameter: (File) file
-			returns: contents of file
+			returns: empty
+			Console: contents of file
 		move():
 			parameter: (string) location
 			returns: void
@@ -80,4 +86,7 @@ File:
 		rename():
 			parameter: (string) new name
 			returns: void
+		get_contents():
+			parameter: empty
+			returns: content
 
